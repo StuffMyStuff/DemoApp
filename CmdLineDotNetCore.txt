@@ -1,0 +1,6 @@
+dotnet --version
+dotnet new -h
+
+
+dotnet ef migrations add InitialCreate	'Creates the migrations script files
+dotnet ef database update   'Creates the physical database
