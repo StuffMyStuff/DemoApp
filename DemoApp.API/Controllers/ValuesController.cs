@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DemoApp.API.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoApp.Controllers
 {
     // http://localhost:5000/api/values
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -31,6 +33,7 @@ namespace DemoApp.Controllers
 
 
         // GET api/values/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
         // public ActionResult<string> Get(int id)
         public IActionResult GetValue(int id)
